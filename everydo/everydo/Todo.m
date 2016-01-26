@@ -6,9 +6,9 @@
 //  Copyright © 2016 William Lam. All rights reserved.
 //
 
-#import "todo.h"
+#import "Todo.h"
 
-@implementation todo
+@implementation Todo
 
 - (instancetype)initWithTitle:(NSString *)title
 						description:(NSString *)todoDescription

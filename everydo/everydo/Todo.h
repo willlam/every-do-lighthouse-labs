@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface todo : NSObject
+@interface Todo : NSObject
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *todoDescription;

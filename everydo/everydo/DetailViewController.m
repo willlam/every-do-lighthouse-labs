@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Todo.h"
 
 @interface DetailViewController ()
 

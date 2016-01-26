@@ -14,7 +14,7 @@
 		39B2ECE61C57D5B80044549A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B2ECE41C57D5B80044549A /* Main.storyboard */; };
 		39B2ECE81C57D5B80044549A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B2ECE71C57D5B80044549A /* Assets.xcassets */; };
 		39B2ECEB1C57D5B80044549A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B2ECE91C57D5B80044549A /* LaunchScreen.storyboard */; };
-		39B2ECF41C57D6390044549A /* todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B2ECF31C57D6390044549A /* todo.m */; settings = {ASSET_TAGS = (); }; };
+		39B2ECF41C57D6390044549A /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B2ECF31C57D6390044549A /* Todo.m */; settings = {ASSET_TAGS = (); }; };
 		39B2ECFA1C57D9BA0044549A /* MyTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B2ECF91C57D9BA0044549A /* MyTaskCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -31,8 +31,8 @@
 		39B2ECE71C57D5B80044549A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39B2ECEA1C57D5B80044549A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39B2ECEC1C57D5B80044549A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39B2ECF21C57D6390044549A /* todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo.h; sourceTree = "<group>"; };
-		39B2ECF31C57D6390044549A /* todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = todo.m; sourceTree = "<group>"; };
+		39B2ECF21C57D6390044549A /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		39B2ECF31C57D6390044549A /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		39B2ECF81C57D9BA0044549A /* MyTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTaskCell.h; sourceTree = "<group>"; };
 		39B2ECF91C57D9BA0044549A /* MyTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTaskCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,8 +73,8 @@
 				39B2ECDF1C57D5B80044549A /* MasterViewController.m */,
 				39B2ECE11C57D5B80044549A /* DetailViewController.h */,
 				39B2ECE21C57D5B80044549A /* DetailViewController.m */,
-				39B2ECF21C57D6390044549A /* todo.h */,
-				39B2ECF31C57D6390044549A /* todo.m */,
+				39B2ECF21C57D6390044549A /* Todo.h */,
+				39B2ECF31C57D6390044549A /* Todo.m */,
 				39B2ECF81C57D9BA0044549A /* MyTaskCell.h */,
 				39B2ECF91C57D9BA0044549A /* MyTaskCell.m */,
 				39B2ECE41C57D5B80044549A /* Main.storyboard */,
@@ -166,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39B2ECFA1C57D9BA0044549A /* MyTaskCell.m in Sources */,
-				39B2ECF41C57D6390044549A /* todo.m in Sources */,
+				39B2ECF41C57D6390044549A /* Todo.m in Sources */,
 				39B2ECDD1C57D5B80044549A /* AppDelegate.m in Sources */,
 				39B2ECE01C57D5B80044549A /* MasterViewController.m in Sources */,
 				39B2ECDA1C57D5B80044549A /* main.m in Sources */,

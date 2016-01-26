@@ -8,10 +8,14 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "MyTaskCell.h"
+#import "Todo.h"
+
 
 
 @interface MasterViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *todoTable;
 @property NSMutableArray *objects;
 @property NSMutableArray *todoObjects;
 
@@ -25,11 +29,14 @@
 	
 	self.todoObjects = [NSMutableArray array];
 	
-	todo *todo1 = [[todo alloc] initWithTitle:@"Buy an orange thing" description:@"Orange things are fun" priority:3 isCompleted:NO];
-	todo *todo2 = [[todo alloc] initWithTitle:@"Learn Objective-C" description:@"Learn in the inner workings of building apps in Objective-C at Lighthouse Labs" priority:3 isCompleted:NO];
-	todo *todo3 = [[todo alloc] initWithTitle:@"Learn Table Views" description:@"A description about the table view task" priority:3 isCompleted:NO];
+	Todo *todo1 = [[Todo alloc] initWithTitle:@"Buy an orange thing" description:@"Orange things are fun" priority:3 isCompleted:NO];
+	Todo *todo2 = [[Todo alloc] initWithTitle:@"Learn Objective-C" description:@"Learn in the inner workings of building apps in Objective-C at Lighthouse Labs" priority:3 isCompleted:NO];
+	Todo *todo3 = [[Todo alloc] initWithTitle:@"Learn Table Views" description:@"A description about the table view task" priority:3 isCompleted:NO];
 	
 	[self.todoObjects addObjectsFromArray:@[todo1, todo2, todo3]];
+	
+	self.todoTable.dataSource = self;
+	self.todoTable.delegate = self;
 	
 	
 	
@@ -85,19 +92,26 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 1;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//	return 1;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return self.objects.count;
+	return self.todoObjects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+	MyTaskCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TodoCell" forIndexPath:indexPath];
+	
+	Todo *currentTodo = self.todoObjects[indexPath.row];
 
-	NSDate *object = self.objects[indexPath.row];
-	cell.textLabel.text = [object description];
+	cell.todoTitle.text = currentTodo.title;
+	cell.todoDescription.text = currentTodo.todoDescription;
+	
+	//  putting the raw int value of currentTodo.priority into literal notation to create an object and setting the property to string value so it can evaluate propertly.
+	cell.todoPriority.text = @(currentTodo.priority).stringValue;
+	
+	
 	return cell;
 }
 

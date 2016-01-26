@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "todo.h"
+#import "Todo.h"
 #import "MyTaskCell.h"
 
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController
+
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
