@@ -78,6 +78,66 @@
             </objects>
             <point key="canvasLocation" x="-856" y="-330"/>
         </scene>
+        <!--Add Item View Controller-->
+        <scene sceneID="Jr7-Pq-WFS">
+            <objects>
+                <viewController id="RXm-vn-V5s" customClass="AddItemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5IO-eb-R7N"/>
+                        <viewControllerLayoutGuide type="bottom" id="yXT-Gg-wMp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l88-cO-le5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xKC-Sd-RnO" userLabel="AddItemLabel">
+                                <rect key="frame" x="69" y="58" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8K-bu-cX8" userLabel="AddItemDescription">
+                                <rect key="frame" x="69" y="133" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-nB-el5">
+                                <rect key="frame" x="0.0" y="302" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="RXm-vn-V5s" eventType="touchUpInside" id="5mP-Cb-HhL"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yPD-eO-XMb">
+                                <rect key="frame" x="0.0" y="223" width="235" height="29"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iQ-5D-ffB">
+                                <rect key="frame" x="201" y="302" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="RXm-vn-V5s" eventType="touchUpInside" id="8vL-QL-xfe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancel" destination="mGR-nB-el5" id="NaO-6Y-BED"/>
+                        <outlet property="descriptionLabel" destination="R8K-bu-cX8" id="BNw-fA-D8B"/>
+                        <outlet property="save" destination="7iQ-5D-ffB" id="4nD-Zm-oLx"/>
+                        <outlet property="segmentedControl" destination="yPD-eO-XMb" id="uBV-yj-D9e"/>
+                        <outlet property="title" destination="xKC-Sd-RnO" id="aZG-KQ-LOG"/>
+                        <outlet property="titleLabel" destination="xKC-Sd-RnO" id="XKt-ZV-m1f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJZ-9m-UfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="-1350"/>
+        </scene>
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
@@ -129,14 +189,20 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Will's Todo List" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Will's Todo List" id="Zdf-7t-Un8">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="xaV-7h-Q9T">
+                            <connections>
+                                <segue destination="RXm-vn-V5s" kind="presentation" identifier="AddItem" id="KsK-9q-1Gv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="todoTable" destination="r7i-6Z-zg0" id="9QW-m8-i9a"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="-630"/>
+            <point key="canvasLocation" x="782" y="-654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">

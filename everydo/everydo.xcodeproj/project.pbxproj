@@ -16,6 +16,7 @@
 		39B2ECEB1C57D5B80044549A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B2ECE91C57D5B80044549A /* LaunchScreen.storyboard */; };
 		39B2ECF41C57D6390044549A /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B2ECF31C57D6390044549A /* Todo.m */; settings = {ASSET_TAGS = (); }; };
 		39B2ECFA1C57D9BA0044549A /* MyTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B2ECF91C57D9BA0044549A /* MyTaskCell.m */; settings = {ASSET_TAGS = (); }; };
+		39B2ECFD1C5834310044549A /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B2ECFC1C5834310044549A /* AddItemViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		39B2ECF31C57D6390044549A /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		39B2ECF81C57D9BA0044549A /* MyTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTaskCell.h; sourceTree = "<group>"; };
 		39B2ECF91C57D9BA0044549A /* MyTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTaskCell.m; sourceTree = "<group>"; };
+		39B2ECFB1C5834310044549A /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		39B2ECFC1C5834310044549A /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				39B2ECDF1C57D5B80044549A /* MasterViewController.m */,
 				39B2ECE11C57D5B80044549A /* DetailViewController.h */,
 				39B2ECE21C57D5B80044549A /* DetailViewController.m */,
+				39B2ECFB1C5834310044549A /* AddItemViewController.h */,
+				39B2ECFC1C5834310044549A /* AddItemViewController.m */,
 				39B2ECF21C57D6390044549A /* Todo.h */,
 				39B2ECF31C57D6390044549A /* Todo.m */,
 				39B2ECF81C57D9BA0044549A /* MyTaskCell.h */,
@@ -167,6 +172,7 @@
 			files = (
 				39B2ECFA1C57D9BA0044549A /* MyTaskCell.m in Sources */,
 				39B2ECF41C57D6390044549A /* Todo.m in Sources */,
+				39B2ECFD1C5834310044549A /* AddItemViewController.m in Sources */,
 				39B2ECDD1C57D5B80044549A /* AppDelegate.m in Sources */,
 				39B2ECE01C57D5B80044549A /* MasterViewController.m in Sources */,
 				39B2ECDA1C57D5B80044549A /* main.m in Sources */,
@@ -280,10 +286,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = everydo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = willlam.everydo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -291,10 +300,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = everydo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = willlam.everydo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -317,6 +329,7 @@
 				39B2ECF11C57D5B80044549A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

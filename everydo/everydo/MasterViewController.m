@@ -10,10 +10,11 @@
 #import "DetailViewController.h"
 #import "MyTaskCell.h"
 #import "Todo.h"
+#import "AddItemViewController.h"
 
 
-
-@interface MasterViewController () <UITableViewDataSource, UITableViewDelegate>
+// 3
+@interface MasterViewController () <UITableViewDataSource, UITableViewDelegate, AddItemViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *todoTable;
 @property NSMutableArray *objects;
@@ -41,20 +42,11 @@
 	
 	
 	
-	
-//	MyTaskCell *todo1 = [[MyTaskCell alloc] initWithName:@"Pizza" taste:@"Yummy!"];
-//	Food *icecream = [[Food alloc] initWithName:@"Ice cream" taste:@"cold!"];
-//	Food *hotdog = [[Food alloc] initWithName:@"Hot Dog" taste:@"Gross"];
-//	Food *kale = [[Food alloc] initWithName:@"Kale" taste:@"Healthy"];
-//	
-	
-	
-	
 	// Do any additional setup after loading the view, typically from a nib.
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-	self.navigationItem.rightBarButtonItem = addButton;
+//	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//
+//	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+//	self.navigationItem.rightBarButtonItem = addButton;
 	self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -68,13 +60,24 @@
 	// Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-	if (!self.objects) {
-	    self.objects = [[NSMutableArray alloc] init];
-	}
-	[self.objects insertObject:[NSDate date] atIndex:0];
-	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-	[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//- (void)insertNewObject:(id)sender {
+//	if (!self.objects) {
+//	    self.objects = [[NSMutableArray alloc] init];
+//	}
+//	[self.objects insertObject:[NSDate date] atIndex:0];
+//	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//	[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//}
+
+#pragma mark - Delegates
+// 4
+
+- (void)addItem:(AddItemViewController *)addItem dismissWithTitle:(NSString *)title desc:(NSString *)desc priority:(int)priority {
+	Todo *todo = [[Todo alloc] initWithTitle:title description:desc priority:priority isCompleted:NO];
+	[self.todoObjects insertObject:todo atIndex:0];
+	
+	[self.tableView reloadData];
+	
 }
 
 
@@ -92,6 +95,10 @@
 
 	    controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 	    controller.navigationItem.leftItemsSupplementBackButton = YES;
+	}
+	if ([segue.identifier isEqualToString:@"AddItem"]) {
+		AddItemViewController *addItem = segue.destinationViewController;
+		addItem.delegate = self;
 	}
 }
 
